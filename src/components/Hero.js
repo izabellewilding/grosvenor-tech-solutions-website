@@ -2,9 +2,9 @@ import * as React from "react";
 import styled from "@emotion/styled";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
-// import DownArrowGraphic from "../assets/down-arrow-svg.svg";
-// import Graphic from "../assets/construction_graphic.svg";
-// import { Matrix } from "../components/Matrix.js";
+import { ReactComponent as DownArrowGraphic } from "../assets/down-arrow-svg.svg";
+import { ReactComponent as Graphic } from "../assets/construction_graphic.svg";
+import { Typography } from "@mui/material";
 
 const StyledMuiGrid = styled(Grid)`
   display: flex;
@@ -24,14 +24,14 @@ const StyledMuiGridItem = styled(Grid)`
   padding: 20px;
 `;
 
-// const MainGraphic = styled(Graphic)`
-//   width: 100%;
+const MainGraphic = styled(Graphic)`
+  width: 100%;
 
-//   @media ${(props) => props.theme.bp.tabletUp} {
-//     width: 176%;
-//   }
-//   height: auto;
-// `;
+  @media ${(props) => props.theme.bp.tabletUp} {
+    width: 176%;
+  }
+  height: auto;
+`;
 
 const Title = styled.h1`
   font-size: ${(props) => props.theme.font.h1};
@@ -71,12 +71,12 @@ const ArrowButton = styled.div`
 export const Hero = () => {
   return (
     <>
-      {/* <Matrix /> */}
       <StyledMuiGrid container spacing={1}>
         <StyledMuiGridItem item xs={12} md={6}>
-          <Title>
-            Building quality, scalable software that users & developers love.
-          </Title>
+          <Typography variant="h2">
+            Building quality, scalable software and applications
+          </Typography>
+          <br />
           <Grid container spacing={3}>
             <Grid item>
               <Button variant="contained">See our work</Button>
@@ -86,12 +86,14 @@ export const Hero = () => {
             </Grid>
           </Grid>
           <LearnMoreCTAWrapper>
-            <ArrowButton>{/* <DownArrowGraphic /> */}</ArrowButton>
+            <ArrowButton>
+              <DownArrowGraphic />
+            </ArrowButton>
             <LearnMoreCTA>Learn more about what we do</LearnMoreCTA>
           </LearnMoreCTAWrapper>
         </StyledMuiGridItem>
         <StyledMuiGridItem item xs={12} md={6}>
-          {/* <MainGraphic /> */}
+          <MainGraphic />
         </StyledMuiGridItem>
       </StyledMuiGrid>
     </>
