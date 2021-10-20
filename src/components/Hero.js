@@ -68,13 +68,14 @@ const ArrowButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 3rem;
+  height: 2.25rem;
+  width: 2.25rem;
 
   border-radius: 50%;
   border: solid 3px ${(props) => props.theme.colors.darkBlueGrey};
   background: ${(props) => props.theme.colors.darkBlueGrey};
   svg {
-    height: 3rem;
+    height: 2.25;
     fill: ${(props) => props.theme.colors.white};
   }
 `;
