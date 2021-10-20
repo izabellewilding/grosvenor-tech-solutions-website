@@ -10,13 +10,14 @@ const StyledMuiGrid = styled(Grid)`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 10vw;
+  padding: 0 5vw;
   overflow: hidden;
 
   @media ${(props) => props.theme.bp.tabletUp} {
-    margin-top: 3rem !important;
-
-    padding-bottom: 2rem;
+    padding-top: 3rem;
+  }
+  @media ${(props) => props.theme.bp.desktopUp} {
+    padding-top: 0;
   }
 `;
 
@@ -24,18 +25,23 @@ const StyledMuiGridItem = styled(Grid)`
   padding: 20px;
 `;
 
-const MainGraphic = styled(Graphic)`
-  width: 100%;
-
-  @media ${(props) => props.theme.bp.tabletUp} {
-    width: 176%;
-  }
-  height: auto;
+const MainGraphicWrapper = styled(StyledMuiGridItem)`
+  z-index: 5;
 `;
 
-const Title = styled.h1`
-  font-size: ${(props) => props.theme.font.h1};
-  color: ${(props) => props.theme.colors.white};
+const MainGraphic = styled(Graphic)`
+  width: 100%;
+  z-index: 3;
+  height: auto;
+
+  @media ${(props) => props.theme.bp.tabletUp} {
+    width: 155%;
+  }
+`;
+
+const Title = styled(Typography)`
+  /* font-size: ${(props) => props.theme.font.h1}; */
+  /* color: ${(props) => props.theme.colors.white}; */
   font-weight: bold;
 `;
 
@@ -46,9 +52,9 @@ const LearnMoreCTAWrapper = styled.div`
   margin-top: 3rem;
 `;
 
-const LearnMoreCTA = styled.h3`
-  font-size: ${(props) => props.theme.font.h3};
-  color: ${(props) => props.theme.colors.white};
+const LearnMoreCTA = styled(Typography)`
+  /* font-size: ${(props) => props.theme.font.h3}; */
+  /* color: ${(props) => props.theme.colors.white}; */
   margin-left: 1.5rem;
 `;
 
@@ -56,7 +62,6 @@ const ArrowButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 3rem;
   height: 3rem;
 
   border-radius: 50%;
@@ -73,9 +78,7 @@ export const Hero = () => {
     <>
       <StyledMuiGrid container spacing={1}>
         <StyledMuiGridItem item xs={12} md={6}>
-          <Typography variant="h2">
-            Building quality, scalable software and applications
-          </Typography>
+          <Title variant="h1">Quality software and applications</Title>
           <br />
           <Grid container spacing={3}>
             <Grid item>
@@ -89,12 +92,14 @@ export const Hero = () => {
             <ArrowButton>
               <DownArrowGraphic />
             </ArrowButton>
-            <LearnMoreCTA>Learn more about what we do</LearnMoreCTA>
+            <LearnMoreCTA variant="body1">
+              Learn more about what we do
+            </LearnMoreCTA>
           </LearnMoreCTAWrapper>
         </StyledMuiGridItem>
-        <StyledMuiGridItem item xs={12} md={6}>
+        <MainGraphicWrapper item xs={12} md={6}>
           <MainGraphic />
-        </StyledMuiGridItem>
+        </MainGraphicWrapper>
       </StyledMuiGrid>
     </>
   );

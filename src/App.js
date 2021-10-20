@@ -7,17 +7,17 @@ import { theme } from "./theme/theme";
 import { Navigation } from "./components/Navigation";
 import styled from "@emotion/styled";
 import { Hero } from "./components/Hero";
-import { ReactComponent as Wave } from "./assets/wave.svg";
+import { ReactComponent as Wave } from "./assets/wave-4.svg";
 
 const BannerWave = styled(Wave)`
-  position: fixed;
+  position: absolute;
+  opacity: 0.5;
 `;
 function App() {
   return (
     <MuiThemeProvider theme={muiTheme}>
       <ThemeProvider theme={theme}>
         <div className="App">
-          {" "}
           <BannerWave />
           <Navigation />
           <Hero />
