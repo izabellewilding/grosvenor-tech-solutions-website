@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   max-width: 100vw;
-  padding: 2.5rem 5vw 0 5vw;
+  padding: 2.5rem 1.5rem;
 `;
 
 const Logo = styled(Typography)`
