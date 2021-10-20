@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import { ReactComponent as DownArrowGraphic } from "../assets/down-arrow-svg.svg";
-import { ReactComponent as Graphic } from "../assets/construction_graphic_code.svg";
+import { ReactComponent as Graphic } from "../assets/construction_graphic.svg";
 import { Typography } from "@mui/material";
 
 const StyledMuiGrid = styled(Grid)`
