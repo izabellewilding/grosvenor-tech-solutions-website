@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "./theme/theme";
+import { ThemeProvider } from "@emotion/react";
+import { ThemeProvider as MuiThemeProvider } from "@mui/material";
+import { muiTheme } from "./theme/mui-theme";
+import { theme } from "./theme/theme";
+import { Navigation } from "./components/Navigation";
+import styled from "@emotion/styled";
+import { Hero } from "./components/Hero";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MuiThemeProvider theme={muiTheme}>
+      <ThemeProvider theme={theme}>
+        <div className="App">
+          <Navigation />
+          <Hero />
+        </div>
+      </ThemeProvider>
+    </MuiThemeProvider>
   );
 }
 
