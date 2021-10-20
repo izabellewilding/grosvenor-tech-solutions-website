@@ -1,5 +1,8 @@
 import React from "react";
 import styled from "@emotion/styled";
+import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const Wrapper = styled.div`
   display: flex;
@@ -8,8 +11,11 @@ const Wrapper = styled.div`
   padding: 2.5rem 5vw 0 5vw;
 `;
 
-const Logo = styled.div`
-  width: 150px;
+const Logo = styled(Typography)`
+  color: #d5d4ff;
+  font-weight: bold;
+  color: ${(props) => props.theme.colors.white};
+  z-index: 1;
 `;
 
 const NavList = styled.ul`
@@ -22,7 +28,7 @@ const NavItem = styled.li`
   cursor: pointer;
   position: relative;
   border-radius: 20px solid red;
-  color: ${(props) => props.theme.colors.darkBlue};
+  color: ${(props) => props.theme.colors.white};
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
   &:hover {
@@ -50,8 +56,8 @@ const NavItem = styled.li`
 export const Navigation = () => {
   return (
     <Wrapper>
-      <div>logo</div>
-      <NavList>
+      <Logo variant="body2">Grosvenor Technical Solutions.</Logo>
+      {/* <NavList>
         <NavItem>
           <a>About</a>
         </NavItem>
@@ -62,6 +68,9 @@ export const Navigation = () => {
           <a>Contact</a>
         </NavItem>
       </NavList>
+      <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+        <MenuIcon />
+      </IconButton> */}
     </Wrapper>
   );
 };

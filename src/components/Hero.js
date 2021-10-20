@@ -10,14 +10,12 @@ const StyledMuiGrid = styled(Grid)`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 5vw;
-  overflow: hidden;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-top: 3rem;
 
-  @media ${(props) => props.theme.bp.tabletUp} {
-    padding-top: 3rem;
-  }
   @media ${(props) => props.theme.bp.desktopUp} {
-    padding-top: 0;
+    padding-top: 1.5rem;
   }
 `;
 
@@ -40,9 +38,9 @@ const MainGraphic = styled(Graphic)`
 `;
 
 const Title = styled(Typography)`
-  /* font-size: ${(props) => props.theme.font.h1}; */
-  /* color: ${(props) => props.theme.colors.white}; */
   font-weight: bold;
+  color: ${(props) => props.theme.colors.darkBlueGrey};
+  mix-blend-mode: color-burn;
 `;
 
 const LearnMoreCTAWrapper = styled.div`
@@ -50,12 +48,20 @@ const LearnMoreCTAWrapper = styled.div`
   flex-direction: row;
   align-items: center;
   margin-top: 3rem;
+  cursor: pointer;
 `;
 
 const LearnMoreCTA = styled(Typography)`
-  /* font-size: ${(props) => props.theme.font.h3}; */
-  /* color: ${(props) => props.theme.colors.white}; */
   margin-left: 1.5rem;
+`;
+
+const ButtonsContainer = styled(Grid)`
+  margin-top: 1rem;
+`;
+
+const RoundedButton = styled(Button)`
+  border-radius: 50px;
+  padding: 15px 27px;
 `;
 
 const ArrowButton = styled.div`
@@ -65,8 +71,8 @@ const ArrowButton = styled.div`
   height: 3rem;
 
   border-radius: 50%;
-  border: solid 3px ${(props) => props.theme.colors.darkBlue};
-  background: ${(props) => props.theme.colors.darkBlue};
+  border: solid 3px ${(props) => props.theme.colors.darkBlueGrey};
+  background: ${(props) => props.theme.colors.darkBlueGrey};
   svg {
     height: 3rem;
     fill: ${(props) => props.theme.colors.white};
@@ -79,15 +85,14 @@ export const Hero = () => {
       <StyledMuiGrid container spacing={1}>
         <StyledMuiGridItem item xs={12} md={6}>
           <Title variant="h1">Quality software and applications</Title>
-          <br />
-          <Grid container spacing={3}>
+          <ButtonsContainer container spacing={3}>
             <Grid item>
-              <Button variant="contained">See our work</Button>
+              <RoundedButton variant="contained">See our work</RoundedButton>
             </Grid>
             <Grid item>
-              <Button variant="outlined">See our work</Button>
+              <RoundedButton variant="outlined">Get in touch</RoundedButton>
             </Grid>
-          </Grid>
+          </ButtonsContainer>
           <LearnMoreCTAWrapper>
             <ArrowButton>
               <DownArrowGraphic />

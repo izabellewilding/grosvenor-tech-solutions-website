@@ -8,19 +8,23 @@ import { Navigation } from "./components/Navigation";
 import styled from "@emotion/styled";
 import { Hero } from "./components/Hero";
 import { ReactComponent as Wave } from "./assets/wave-4.svg";
+import Container from "@mui/material/Container";
 
 const BannerWave = styled(Wave)`
   position: absolute;
-  opacity: 0.5;
+  opacity: 0.7;
 `;
+
 function App() {
   return (
     <MuiThemeProvider theme={muiTheme}>
       <ThemeProvider theme={theme}>
         <div className="App">
           <BannerWave />
-          <Navigation />
-          <Hero />
+          <Container maxWidth="xl">
+            <Navigation />
+            <Hero />
+          </Container>
         </div>
       </ThemeProvider>
     </MuiThemeProvider>
