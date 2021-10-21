@@ -1,14 +1,19 @@
 import React from "react";
 import styled from "@emotion/styled";
 import Typography from "@mui/material/Typography";
-// import IconButton from "@mui/material/IconButton";
-// import MenuIcon from "@mui/icons-material/Menu";
-
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
+import { ReactComponent as Moon } from "../assets/moon.svg";
+import { ReactComponent as Sun } from "../assets/sun.svg";
+import { darkTheme } from "../theme/mui-theme";
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   max-width: 100vw;
   padding: 1.5rem 0.5rem;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
 
   @media ${(props) => props.theme.breakpoints.tabletUp} {
     padding: 2.5rem 1.5rem;
@@ -57,11 +62,26 @@ const NavItem = styled.li`
   }
 `;
 
-export const Navigation = () => {
+const SwitchThemeButton = styled.button`
+  display: flex;
+  border-radius: 50%;
+  border: solid black 3px;
+  padding: 0.75rem;
+  background-color: transparent;
+  cursor: pointer;
+
+  svg {
+    height: 2rem;
+    width: 2rem;
+    transform: rotate(-12deg);
+  }
+`;
+
+export const Navigation = ({ onSelectTheme, isDarkTheme }) => {
   return (
     <Wrapper>
       <Logo variant="body2">Grosvenor Technical Solutions.</Logo>
-      {/* <NavList>
+      <NavList>
         <NavItem>
           <a>About</a>
         </NavItem>
@@ -74,7 +94,10 @@ export const Navigation = () => {
       </NavList>
       <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
         <MenuIcon />
-      </IconButton> */}
+      </IconButton>
+      <SwitchThemeButton onClick={onSelectTheme}>
+        {isDarkTheme ? <Sun /> : <Moon />}
+      </SwitchThemeButton>
     </Wrapper>
   );
 };

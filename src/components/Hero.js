@@ -39,7 +39,7 @@ const MainGraphic = styled(Graphic)`
 
 const Title = styled(Typography)`
   font-weight: bold;
-  color: ${(props) => props.theme.palette.dark.main};
+  color: ${(props) => props.theme.palette.secondary.main};
 
   @supports not (-webkit-touch-callout: none) {
     mix-blend-mode: ${(props) =>
@@ -57,7 +57,7 @@ const LearnMoreCTAWrapper = styled.div`
 
 const LearnMore = styled(Typography)`
   margin-left: 1.5rem;
-  color: ${(props) => props.theme.palette.dark.main};
+  color: ${(props) => props.theme.palette.secondary.main};
 `;
 
 const ButtonsContainer = styled(BaseGrid)`
@@ -77,8 +77,8 @@ const ArrowButton = styled.div`
   width: 2.25rem;
 
   border-radius: 50%;
-  border: solid 3px ${(props) => props.theme.palette.dark.main};
-  background: ${(props) => props.theme.palette.dark.main};
+  border: solid 3px ${(props) => props.theme.palette.secondary.main};
+  background: ${(props) => props.theme.palette.secondary.main};
 
   svg {
     height: 2.25;

@@ -8,7 +8,6 @@ import { Hero } from "./components/Hero";
 import { ReactComponent as Wave } from "./assets/wave.svg";
 import Container from "@mui/material/Container";
 import "./App.css";
-import "./theme/theme";
 import CssBaseline from "@mui/material/CssBaseline";
 
 const BannerWave = styled(Wave)`
@@ -16,26 +15,33 @@ const BannerWave = styled(Wave)`
   opacity: 0.7;
 `;
 
+const StyledContainer = styled.div`
+  padding-top: 6rem;
+`;
+
 function App() {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
+
+  //emotion theme provider gets passed one of the MuiThemes for use in styled-components
   const theme = isDarkTheme ? darkTheme : lightTheme;
+  const toggleTheme = () => setIsDarkTheme(!isDarkTheme);
 
   return (
     <MuiThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <app className="App">
-          <button
+          {/* <button
             style={{ position: "fixed", zIndex: 10 }}
-            onClick={() => setIsDarkTheme(!isDarkTheme)}
+            onClick={() => toggleTheme}
           >
             toggle dark mode
-          </button>
+          </button> */}
+          <Navigation onSelectTheme={toggleTheme} isDarkTheme={isDarkTheme} />
           <BannerWave />
-          <Container maxWidth="xl">
-            <Navigation />
+          <StyledContainer maxWidth="xl">
             <Hero isDarkTheme={isDarkTheme} />
-          </Container>
+          </StyledContainer>
         </app>
       </ThemeProvider>
     </MuiThemeProvider>
