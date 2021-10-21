@@ -7,7 +7,7 @@ import { theme } from "./theme/theme";
 import { Navigation } from "./components/Navigation";
 import styled from "@emotion/styled";
 import { Hero } from "./components/Hero";
-import { ReactComponent as Wave } from "./assets/wave-4.svg";
+import { ReactComponent as Wave } from "./assets/wave.svg";
 import Container from "@mui/material/Container";
 
 const BannerWave = styled(Wave)`

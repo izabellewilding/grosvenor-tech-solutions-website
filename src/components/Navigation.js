@@ -1,14 +1,18 @@
 import React from "react";
 import styled from "@emotion/styled";
 import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
+// import IconButton from "@mui/material/IconButton";
+// import MenuIcon from "@mui/icons-material/Menu";
 
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   max-width: 100vw;
-  padding: 2.5rem 1.5rem;
+  padding: 1.5rem 0.5rem;
+
+  @media ${(props) => props.theme.bp.tabletUp} {
+    padding: 2.5rem 1.5rem;
+  }
 `;
 
 const Logo = styled(Typography)`
