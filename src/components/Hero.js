@@ -42,7 +42,8 @@ const Title = styled(Typography)`
   color: ${(props) => props.theme.palette.dark.main};
 
   @supports not (-webkit-touch-callout: none) {
-    mix-blend-mode: color-burn;
+    mix-blend-mode: ${(props) =>
+      props.isDarkTheme ? "lighten" : "color-burn"};
   }
 `;
 
@@ -56,6 +57,7 @@ const LearnMoreCTAWrapper = styled.div`
 
 const LearnMore = styled(Typography)`
   margin-left: 1.5rem;
+  color: ${(props) => props.theme.palette.dark.main};
 `;
 
 const ButtonsContainer = styled(BaseGrid)`
@@ -84,12 +86,14 @@ const ArrowButton = styled.div`
   }
 `;
 
-export const Hero = () => {
+export const Hero = ({ isDarkTheme }) => {
   return (
     <>
       <Grid container spacing={1}>
         <StyledGridItem item xs={12} md={6}>
-          <Title variant="h1">Quality software and applications</Title>
+          <Title variant="h1" isDarkTheme={isDarkTheme}>
+            Quality software and applications
+          </Title>
           <ButtonsContainer container spacing={3}>
             <Grid item>
               <RoundedButton variant="contained">See our work</RoundedButton>

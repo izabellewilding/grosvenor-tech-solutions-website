@@ -17,11 +17,12 @@ const lightTheme = createTheme({
       main: "#6b62ff",
     },
     dark: {
-      main: "#353354",
+      main: "#1d1c32",
     },
     light: {
       main: "#FFFFFF",
     },
+    background: { default: "" },
   },
 });
 
@@ -37,8 +38,10 @@ const darkTheme = createTheme({
       main: "#FFFFFF",
     },
     light: {
-      main: "#353354",
+      main: "#1d1c32",
     },
+
+    background: { default: "#1d1c32" },
   },
 });
 
