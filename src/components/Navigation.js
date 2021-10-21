@@ -6,6 +6,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { ReactComponent as Moon } from "../assets/moon.svg";
 import { ReactComponent as Sun } from "../assets/sun.svg";
 import { darkTheme } from "../theme/mui-theme";
+
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
@@ -27,8 +28,12 @@ const Logo = styled(Typography)`
   z-index: 1;
 `;
 
-const NavList = styled.ul`
-  display: flex;
+const NavListWrapper = styled.ul`
+  display: none;
+
+  @media ${(props) => props.theme.breakpoints.tabletUp} {
+    display: flex;
+  }
 `;
 
 const NavItem = styled.li`
@@ -65,7 +70,8 @@ const NavItem = styled.li`
 const SwitchThemeButton = styled.button`
   display: flex;
   border-radius: 50%;
-  border: solid black 3px;
+  border: solid 3px;
+  border-color: ${(props) => props.theme.palette.secondary.main};
   padding: 0.75rem;
   background-color: transparent;
   cursor: pointer;
@@ -74,14 +80,22 @@ const SwitchThemeButton = styled.button`
     height: 2rem;
     width: 2rem;
     transform: rotate(-12deg);
+    fill: ${(props) => props.theme.palette.secondary.main};
   }
 `;
 
-export const Navigation = ({ onSelectTheme, isDarkTheme }) => {
+const MobileMenuIcon = styled(IconButton)`
+  display: block;
+
+  @media ${(props) => props.theme.breakpoints.tabletUp} {
+    display: none;
+  }
+`;
+
+const NavList = () => {
   return (
-    <Wrapper>
-      <Logo variant="body2">Grosvenor Technical Solutions.</Logo>
-      <NavList>
+    <>
+      <NavListWrapper>
         <NavItem>
           <a>About</a>
         </NavItem>
@@ -91,13 +105,29 @@ export const Navigation = ({ onSelectTheme, isDarkTheme }) => {
         <NavItem>
           <a>Contact</a>
         </NavItem>
-      </NavList>
-      <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+      </NavListWrapper>
+      <MobileMenuIcon
+        edge="start"
+        color="inherit"
+        aria-label="menu"
+        sx={{ mr: 2 }}
+      >
         <MenuIcon />
-      </IconButton>
-      <SwitchThemeButton onClick={onSelectTheme}>
-        {isDarkTheme ? <Sun /> : <Moon />}
-      </SwitchThemeButton>
+      </MobileMenuIcon>
+    </>
+  );
+};
+
+export const Navigation = ({ onSelectTheme, isDarkTheme }) => {
+  return (
+    <Wrapper>
+      <Logo variant="body2">Grosvenor Technical Solutions.</Logo>
+      <>
+        <NavList />
+        <SwitchThemeButton onClick={onSelectTheme}>
+          {isDarkTheme ? <Sun /> : <Moon />}
+        </SwitchThemeButton>
+      </>
     </Wrapper>
   );
 };

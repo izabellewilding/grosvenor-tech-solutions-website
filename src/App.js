@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "@emotion/styled";
 import { ThemeProvider } from "@emotion/react";
 import { ThemeProvider as MuiThemeProvider } from "@mui/material";
@@ -21,10 +21,26 @@ const StyledContainer = styled.div`
 
 function App() {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [userSelectedTheme, setUserSelectedTheme] = useState(false);
 
   //emotion theme provider gets passed one of the MuiThemes for use in styled-components
   const theme = isDarkTheme ? darkTheme : lightTheme;
-  const toggleTheme = () => setIsDarkTheme(!isDarkTheme);
+  const toggleTheme = () => {
+    setIsDarkTheme(!isDarkTheme);
+    setUserSelectedTheme(true);
+    localStorage.setItem("userSelectedTheme", userSelectedTheme);
+  };
+
+  console.warn(userSelectedTheme);
+
+  useEffect(() => {
+    if (localStorage.getItem("userSelectedTheme")) return;
+    let initialThemeDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+    if (initialThemeDark) setIsDarkTheme(true);
+    else return;
+  }, []);
 
   return (
     <MuiThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
