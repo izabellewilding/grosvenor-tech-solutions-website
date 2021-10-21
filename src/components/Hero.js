@@ -43,7 +43,7 @@ const Title = styled(Typography)`
 
   @supports not (-webkit-touch-callout: none) {
     mix-blend-mode: ${(props) =>
-      props.isDarkTheme ? "lighten" : "color-burn"};
+      props.theme.palette.type === "dark" ? "difference" : "color-burn"};
   }
 `;
 
@@ -86,14 +86,12 @@ const ArrowButton = styled.div`
   }
 `;
 
-export const Hero = ({ isDarkTheme }) => {
+export const Hero = () => {
   return (
     <>
       <Grid container spacing={1}>
         <StyledGridItem item xs={12} md={6}>
-          <Title variant="h1" isDarkTheme={isDarkTheme}>
-            Quality software and applications
-          </Title>
+          <Title variant="h1">Quality software and applications</Title>
           <ButtonsContainer container spacing={3}>
             <Grid item>
               <RoundedButton variant="contained">See our work</RoundedButton>
