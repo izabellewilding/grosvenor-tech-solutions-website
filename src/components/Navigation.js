@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   max-width: 100vw;
   padding: 1.5rem 0.5rem;
 
-  @media ${(props) => props.theme.bp.tabletUp} {
+  @media ${(props) => props.theme.breakpoints.tabletUp} {
     padding: 2.5rem 1.5rem;
   }
 `;
@@ -18,7 +18,7 @@ const Wrapper = styled.div`
 const Logo = styled(Typography)`
   color: #d5d4ff;
   font-weight: bold;
-  color: ${(props) => props.theme.colors.white};
+  color: ${(props) => props.theme.palette.light};
   z-index: 1;
 `;
 
@@ -32,11 +32,11 @@ const NavItem = styled.li`
   cursor: pointer;
   position: relative;
   border-radius: 20px solid red;
-  color: ${(props) => props.theme.colors.white};
+  color: ${(props) => props.theme.palette.light};
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
   &:hover {
-    color: ${(props) => props.theme.colors.purple};
+    color: ${(props) => props.theme.palette.purple};
     a:after {
       width: 100%;
       left: 0;

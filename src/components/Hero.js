@@ -6,7 +6,7 @@ import { ReactComponent as DownArrowGraphic } from "../assets/down-arrow-svg.svg
 import { ReactComponent as Graphic } from "../assets/construction_graphic.svg";
 import { Typography } from "@mui/material";
 
-const StyledGrid = styled(BaseGrid)`
+const Grid = styled(BaseGrid)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,7 +14,7 @@ const StyledGrid = styled(BaseGrid)`
   padding-right: 5vw;
   padding-top: 3rem;
 
-  @media ${(props) => props.theme.bp.desktopUp} {
+  @media ${(props) => props.theme.breakpoints.desktopUp} {
     padding-top: 1.5rem;
   }
 `;
@@ -32,14 +32,14 @@ const MainGraphic = styled(Graphic)`
   z-index: 3;
   height: auto;
 
-  @media ${(props) => props.theme.bp.tabletUp} {
+  @media ${(props) => props.theme.breakpoints.tabletUp} {
     width: 155%;
   }
 `;
 
 const Title = styled(Typography)`
   font-weight: bold;
-  color: ${(props) => props.theme.colors.darkBlueGrey};
+  color: ${(props) => props.theme.palette.dark.main};
 
   @supports not (-webkit-touch-callout: none) {
     mix-blend-mode: color-burn;
@@ -75,27 +75,28 @@ const ArrowButton = styled.div`
   width: 2.25rem;
 
   border-radius: 50%;
-  border: solid 3px ${(props) => props.theme.colors.darkBlueGrey};
-  background: ${(props) => props.theme.colors.darkBlueGrey};
+  border: solid 3px ${(props) => props.theme.palette.dark.main};
+  background: ${(props) => props.theme.palette.dark.main};
+
   svg {
     height: 2.25;
-    fill: ${(props) => props.theme.colors.white};
+    fill: ${(props) => props.theme.palette.light.main};
   }
 `;
 
 export const Hero = () => {
   return (
     <>
-      <StyledGrid container spacing={1}>
+      <Grid container spacing={1}>
         <StyledGridItem item xs={12} md={6}>
           <Title variant="h1">Quality software and applications</Title>
           <ButtonsContainer container spacing={3}>
-            <BaseGrid item>
+            <Grid item>
               <RoundedButton variant="contained">See our work</RoundedButton>
-            </BaseGrid>
-            <BaseGrid item>
+            </Grid>
+            <Grid item>
               <RoundedButton variant="outlined">Get in touch</RoundedButton>
-            </BaseGrid>
+            </Grid>
           </ButtonsContainer>
           <LearnMoreCTAWrapper>
             <ArrowButton>
@@ -107,7 +108,7 @@ export const Hero = () => {
         <MainGraphicWrapper item xs={12} md={6}>
           <MainGraphic />
         </MainGraphicWrapper>
-      </StyledGrid>
+      </Grid>
     </>
   );
 };
