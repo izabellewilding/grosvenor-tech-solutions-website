@@ -11,13 +11,13 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   max-width: 100vw;
-  padding: 1.5rem 0.5rem;
+  padding: 1.5rem 1.5rem;
   position: absolute;
   z-index: 1;
   width: 100%;
 
   @media ${(props) => props.theme.breakpoints.tabletUp} {
-    padding: 2.5rem 1.5rem;
+    padding: 1.5rem 1.5rem;
   }
 `;
 
@@ -70,15 +70,15 @@ const NavItem = styled.li`
 const SwitchThemeButton = styled.button`
   display: flex;
   border-radius: 50%;
-  border: solid 3px;
+  border: solid 2px;
   border-color: ${(props) => props.theme.palette.secondary.main};
   padding: 0.75rem;
   background-color: transparent;
   cursor: pointer;
 
   svg {
-    height: 2rem;
-    width: 2rem;
+    height: 1.25rem;
+    width: 1.25rem;
     transform: rotate(-12deg);
     fill: ${(props) => props.theme.palette.secondary.main};
   }
@@ -123,7 +123,7 @@ export const Navigation = ({ onSelectTheme, isDarkTheme }) => {
     <Wrapper>
       <Logo variant="body2">Grosvenor Technical Solutions.</Logo>
       <>
-        <NavList />
+        {/* <NavList /> */}
         <SwitchThemeButton onClick={onSelectTheme}>
           {isDarkTheme ? <Sun /> : <Moon />}
         </SwitchThemeButton>

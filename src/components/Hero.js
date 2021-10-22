@@ -92,6 +92,9 @@ export const Hero = () => {
       <Grid container spacing={1}>
         <StyledGridItem item xs={12} md={6}>
           <Title variant="h1">Quality software and applications</Title>
+          <Typography variant="subtitle1">
+            Bespoke mobile and web app development by experienced engineers.
+          </Typography>
           <ButtonsContainer container spacing={3}>
             <Grid item>
               <RoundedButton variant="contained">See our work</RoundedButton>
