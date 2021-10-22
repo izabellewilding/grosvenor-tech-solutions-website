@@ -3,12 +3,12 @@ import styled from "@emotion/styled";
 import { ThemeProvider } from "@emotion/react";
 import { ThemeProvider as MuiThemeProvider } from "@mui/material";
 import { darkTheme, lightTheme } from "./theme/mui-theme";
+import CssBaseline from "@mui/material/CssBaseline";
 import { Navigation } from "./components/Navigation";
 import { Hero } from "./components/Hero";
 import { ReactComponent as Wave } from "./assets/wave.svg";
-import Container from "@mui/material/Container";
 import "./App.css";
-import CssBaseline from "@mui/material/CssBaseline";
+import { useSelectTheme } from "./hooks/useSelectTheme";
 
 const BannerWave = styled(Wave)`
   position: absolute;
@@ -20,39 +20,16 @@ const StyledContainer = styled.div`
 `;
 
 function App() {
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
-  const [userSelectedTheme, setUserSelectedTheme] = useState(false);
+  const [theme, toggleTheme] = useSelectTheme();
 
-  //emotion theme provider gets passed one of the MuiThemes for use in styled-components
-  const theme = isDarkTheme ? darkTheme : lightTheme;
-  const toggleTheme = () => {
-    setIsDarkTheme(!isDarkTheme);
-    setUserSelectedTheme(true);
-    localStorage.setItem("userSelectedTheme", userSelectedTheme);
-  };
-
-  console.warn(userSelectedTheme);
-
-  useEffect(() => {
-    if (localStorage.getItem("userSelectedTheme")) return;
-    let initialThemeDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-    if (initialThemeDark) setIsDarkTheme(true);
-    else return;
-  }, []);
+  const isDarkTheme = theme === "dark";
+  const selectedTheme = isDarkTheme ? darkTheme : lightTheme;
 
   return (
-    <MuiThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
-      <ThemeProvider theme={theme}>
+    <MuiThemeProvider theme={selectedTheme}>
+      <ThemeProvider theme={selectedTheme}>
         <CssBaseline />
         <app className="App">
-          {/* <button
-            style={{ position: "fixed", zIndex: 10 }}
-            onClick={() => toggleTheme}
-          >
-            toggle dark mode
-          </button> */}
           <Navigation onSelectTheme={toggleTheme} isDarkTheme={isDarkTheme} />
           <BannerWave />
           <StyledContainer maxWidth="xl">

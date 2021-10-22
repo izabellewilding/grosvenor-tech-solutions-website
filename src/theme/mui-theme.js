@@ -12,7 +12,7 @@ const baseTheme = createTheme({
 const lightTheme = createTheme({
   ...baseTheme,
   palette: {
-    type: "white",
+    type: "light",
     primary: {
       main: "#6b62ff",
     },
