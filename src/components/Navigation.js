@@ -3,8 +3,8 @@ import styled from "@emotion/styled";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import { ReactComponent as Moon } from "../assets/moon.svg";
-import { ReactComponent as Sun } from "../assets/sun.svg";
+import { ReactComponent as Moon } from "../assets/svg/moon.svg";
+import { ReactComponent as Sun } from "../assets/svg/sun.svg";
 import { darkTheme } from "../theme/mui-theme";
 
 const Wrapper = styled.div`

@@ -6,7 +6,7 @@ import { darkTheme, lightTheme } from "./theme/mui-theme";
 import CssBaseline from "@mui/material/CssBaseline";
 import { Navigation } from "./components/Navigation";
 import { Hero } from "./components/Hero";
-import { ReactComponent as Wave } from "./assets/wave.svg";
+import { ReactComponent as Wave } from "./assets/svg/wave.svg";
 import "./App.css";
 import { useSelectTheme } from "./hooks/useSelectTheme";
 

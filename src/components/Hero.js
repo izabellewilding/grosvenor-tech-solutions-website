@@ -2,9 +2,10 @@ import * as React from "react";
 import styled from "@emotion/styled";
 import BaseGrid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
-import { ReactComponent as DownArrowGraphic } from "../assets/down-arrow-svg.svg";
-import { ReactComponent as Graphic } from "../assets/construction_graphic.svg";
+import { ReactComponent as DownArrowGraphic } from "../assets/svg/down-arrow-svg.svg";
+import { ReactComponent as Graphic } from "../assets/svg/construction_graphic.svg";
 import { Typography } from "@mui/material";
+import Recording from "../assets/videos/pastel-pottery-recording.mp4";
 
 const Grid = styled(BaseGrid)`
   display: flex;
@@ -89,6 +90,10 @@ const ArrowButton = styled.div`
   }
 `;
 
+const Video = styled.video`
+  position: absolute;
+`;
+
 export const Hero = () => {
   return (
     <>
@@ -114,6 +119,12 @@ export const Hero = () => {
           </LearnMoreCTAWrapper>
         </StyledGridItem>
         <MainGraphicWrapper item xs={12} md={6}>
+          {/* <Video width="750" height="500" controls>
+            <source
+              src="../assets/videos/pastel-pottery-recording.mp4"
+              type="video/mp4"
+            />
+          </Video> */}
           <MainGraphic />
         </MainGraphicWrapper>
       </Grid>
