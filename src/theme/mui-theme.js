@@ -22,6 +22,9 @@ const lightTheme = createTheme({
     light: {
       main: "#FFFFFF",
     },
+    subtext: {
+      main: "#807f92",
+    },
     background: { default: "" },
   },
 });
@@ -40,11 +43,11 @@ const darkTheme = createTheme({
     light: {
       main: "#3a3758",
     },
-
+    subtext: {
+      main: "#ffffffc7",
+    },
     background: { default: "#1d1c32" },
   },
 });
 
 export { darkTheme, lightTheme };
-
-// export const muiTheme = responsiveFontSizes(theme);

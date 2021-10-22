@@ -10,8 +10,6 @@ const Grid = styled(BaseGrid)`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 5vw;
-  padding-right: 5vw;
   padding-top: 3rem;
 
   @media ${(props) => props.theme.breakpoints.desktopUp} {
@@ -40,11 +38,16 @@ const MainGraphic = styled(Graphic)`
 const Title = styled(Typography)`
   font-weight: bold;
   color: ${(props) => props.theme.palette.secondary.main};
+  margin-bottom: 1.25rem;
 
   @supports not (-webkit-touch-callout: none) {
     mix-blend-mode: ${(props) =>
       props.theme.palette.type === "dark" ? "difference" : "color-burn"};
   }
+`;
+
+const Subtitle = styled(Typography)`
+  color: ${(props) => props.theme.palette.subtext.main};
 `;
 
 const LearnMoreCTAWrapper = styled.div`
@@ -92,9 +95,9 @@ export const Hero = () => {
       <Grid container spacing={1}>
         <StyledGridItem item xs={12} md={6}>
           <Title variant="h1">Quality software and applications</Title>
-          <Typography variant="subtitle1">
-            Bespoke mobile and web app development by experienced engineers.
-          </Typography>
+          <Subtitle variant="subtitle1">
+            Bespoke mobile and web apps developed by experienced engineers.
+          </Subtitle>
           <ButtonsContainer container spacing={3}>
             <Grid item>
               <RoundedButton variant="contained">See our work</RoundedButton>
