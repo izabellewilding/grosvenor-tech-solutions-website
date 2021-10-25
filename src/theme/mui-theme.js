@@ -25,6 +25,9 @@ const lightTheme = createTheme({
     subtext: {
       main: "#807f92",
     },
+    animation: {
+      main: "rgb(109 102 222)",
+    },
     background: { default: "" },
   },
 });
@@ -45,6 +48,9 @@ const darkTheme = createTheme({
     },
     subtext: {
       main: "#ffffffc7",
+    },
+    animation: {
+      main: "#FFFFFF",
     },
     background: { default: "#1d1c32" },
   },

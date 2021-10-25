@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 import styled from "@emotion/styled";
 import { ThemeProvider } from "@emotion/react";
-import { ThemeProvider as MuiThemeProvider } from "@mui/material";
+import {
+  ThemeProvider as MuiThemeProvider,
+  responsiveFontSizes,
+} from "@mui/material";
 import { darkTheme, lightTheme } from "./theme/mui-theme";
 import CssBaseline from "@mui/material/CssBaseline";
 import { Navigation } from "./components/Navigation";
@@ -9,10 +12,11 @@ import { Hero } from "./components/Hero";
 import { ReactComponent as Wave } from "./assets/svg/wave.svg";
 import "./App.css";
 import { useSelectTheme } from "./hooks/useSelectTheme";
+import { BinaryMatrixAnimation } from "./components/BinaryMartixAnimation";
 
 const BannerWave = styled(Wave)`
   position: absolute;
-  opacity: 0.7;
+  /* opacity: 0.9; */
 `;
 
 const StyledContainer = styled.div`
@@ -28,12 +32,13 @@ function App() {
   const selectedTheme = isDarkTheme ? darkTheme : lightTheme;
 
   return (
-    <MuiThemeProvider theme={selectedTheme}>
-      <ThemeProvider theme={selectedTheme}>
+    <MuiThemeProvider theme={responsiveFontSizes(selectedTheme)}>
+      <ThemeProvider theme={responsiveFontSizes(selectedTheme)}>
         <CssBaseline />
         <app className="App">
           <Navigation onSelectTheme={toggleTheme} isDarkTheme={isDarkTheme} />
           <BannerWave />
+          <BinaryMatrixAnimation isDarkTheme={isDarkTheme} />
           <StyledContainer maxWidth="xl">
             <Hero isDarkTheme={isDarkTheme} />
           </StyledContainer>

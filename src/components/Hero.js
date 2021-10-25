@@ -5,7 +5,6 @@ import Button from "@mui/material/Button";
 import { ReactComponent as DownArrowGraphic } from "../assets/svg/down-arrow-svg.svg";
 import { ReactComponent as Graphic } from "../assets/svg/construction_graphic.svg";
 import { Typography } from "@mui/material";
-import Recording from "../assets/videos/pastel-pottery-recording.mp4";
 
 const Grid = styled(BaseGrid)`
   display: flex;
@@ -40,10 +39,13 @@ const Title = styled(Typography)`
   font-weight: bold;
   color: ${(props) => props.theme.palette.secondary.main};
   margin-bottom: 1.25rem;
-
   @supports not (-webkit-touch-callout: none) {
     mix-blend-mode: ${(props) =>
       props.theme.palette.type === "dark" ? "difference" : "color-burn"};
+  }
+
+  @media ${(props) => props.theme.breakpoints.tabletUp} {
+    font-size: 5rem !important;
   }
 `;
 
@@ -90,10 +92,6 @@ const ArrowButton = styled.div`
   }
 `;
 
-const Video = styled.video`
-  position: absolute;
-`;
-
 export const Hero = () => {
   return (
     <>
@@ -119,12 +117,6 @@ export const Hero = () => {
           </LearnMoreCTAWrapper>
         </StyledGridItem>
         <MainGraphicWrapper item xs={12} md={6}>
-          {/* <Video width="750" height="500" controls>
-            <source
-              src="../assets/videos/pastel-pottery-recording.mp4"
-              type="video/mp4"
-            />
-          </Video> */}
           <MainGraphic />
         </MainGraphicWrapper>
       </Grid>
