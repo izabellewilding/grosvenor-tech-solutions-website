@@ -3,7 +3,7 @@
 body {
   margin: 0;
   font-family: "Open Sans", sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 ul {
@@ -21,5 +21,5 @@ li {
 }
 
 .App {
-  overflow: hidden;
+  overflow-x: hidden;
 }
