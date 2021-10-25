@@ -31,7 +31,7 @@ const MainGraphic = styled(Graphic)`
   height: auto;
 
   @media ${(props) => props.theme.breakpoints.tabletUp} {
-    width: 155%;
+    width: 1000px;
     /* max-width: 650px; */
   }
 `;

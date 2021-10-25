@@ -6,8 +6,6 @@ const BinaryMatrixCanvas = styled.canvas`
   z-index: -10;
 `;
 export const BinaryMatrixAnimation = ({ isDarkTheme }) => {
-  console.warn(isDarkTheme);
-
   useEffect(() => {
     var c = document.getElementById("c");
     var ctx = c.getContext("2d");
@@ -54,7 +52,9 @@ export const BinaryMatrixAnimation = ({ isDarkTheme }) => {
         drops[i]++;
       }
     }
-    // setInterval(draw, 40);
+    const drawInterval = setInterval(draw, 40);
+
+    return () => clearInterval(drawInterval);
   }, [isDarkTheme]);
 
   return <BinaryMatrixCanvas id="c"></BinaryMatrixCanvas>;
