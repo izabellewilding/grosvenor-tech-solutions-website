@@ -71,16 +71,15 @@ const SwitchThemeButton = styled.button`
   display: flex;
   border-radius: 50%;
   border: solid 2px;
-  border-color: ${(props) => props.theme.palette.primary.dark};
+  border-color: #d0ceff;
   padding: 0.75rem;
-  background-color: transparent;
+  background-color: #d0ceff;
   cursor: pointer;
 
   svg {
     height: 1.25rem;
     width: 1.25rem;
     transform: rotate(-12deg);
-    fill: ${(props) => props.theme.palette.primary.dark};
   }
 `;
 

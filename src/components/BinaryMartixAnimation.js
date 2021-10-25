@@ -15,7 +15,8 @@ export const BinaryMatrixAnimation = ({ isDarkTheme }) => {
     c.width = window.innerWidth;
 
     //chinese characters - taken from the unicode charset
-    var characters = "ﾊﾐﾋｰｳｼﾅﾓﾆｻﾜﾂｵﾘｱﾎﾃﾏｹﾒｴｶｷﾑﾕﾗｾﾈｽﾀﾇﾍｦｲｸｺｿﾁﾄﾉﾌﾔﾖﾙﾚﾛﾝ";
+    var characters =
+      "ﾊﾐﾋｰｳｼﾅﾓﾆｻﾜﾂｵﾘｱﾎﾃﾏｹﾒｴｶｷﾑﾕﾗｾﾈｽﾀﾇﾍｦｲｸｺｿﾁﾄﾉﾌﾔﾖﾙﾚﾛﾝﾉﾌﾔﾖﾙﾚﾛﾝﾉﾌﾔﾖﾙﾚﾛﾝ";
     //converting the string into an array of single characters
     characters = characters.split("");
 

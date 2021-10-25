@@ -51,6 +51,7 @@ const Title = styled(Typography)`
 `;
 
 const Subtitle = styled(Typography)`
+  font-size: 20px;
   color: ${(props) => props.theme.palette.neutral.main};
 `;
 
@@ -100,7 +101,7 @@ export const Hero = () => {
         <StyledGridItem item xs={12} md={6}>
           <Title variant="h1">Quality software and applications</Title>
           <Subtitle variant="subtitle1">
-            Bespoke mobile and web apps developed by experienced engineers.
+            Bespoke mobile and web apps developed by experienced engineers
           </Subtitle>
           <ButtonsContainer container spacing={3}>
             <Grid item>

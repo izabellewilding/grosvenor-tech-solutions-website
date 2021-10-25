@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import styled from "@emotion/styled";
 import { ThemeProvider } from "@emotion/react";
 import {
@@ -23,6 +22,9 @@ const StyledContainer = styled.div`
   padding-top: 15vh;
   padding-left: 5vw;
   padding-right: 5vw;
+
+  max-width: 1890px;
+  margin: auto;
 `;
 
 function App() {
@@ -38,7 +40,7 @@ function App() {
         <app className="App">
           <Navigation onSelectTheme={toggleTheme} isDarkTheme={isDarkTheme} />
           <BannerWave />
-          <BinaryMatrixAnimation isDarkTheme={isDarkTheme} />
+          {/* <BinaryMatrixAnimation isDarkTheme={isDarkTheme} /> */}
           <StyledContainer maxWidth="xl">
             <Hero isDarkTheme={isDarkTheme} />
           </StyledContainer>
