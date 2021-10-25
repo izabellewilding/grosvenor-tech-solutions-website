@@ -15,14 +15,10 @@ const lightTheme = createTheme({
     type: "light",
     primary: {
       main: "#6b62ff",
+      light: "#FFFFFF",
+      dark: "#3a3758",
     },
-    secondary: {
-      main: "#3a3758",
-    },
-    light: {
-      main: "#FFFFFF",
-    },
-    subtext: {
+    neutral: {
       main: "#807f92",
     },
     animation: {
@@ -39,14 +35,10 @@ const darkTheme = createTheme({
     type: "dark",
     primary: {
       main: "#6b62ff",
+      light: "#3a3758",
+      dark: "#FFFFFF",
     },
-    secondary: {
-      main: "#FFFFFF",
-    },
-    light: {
-      main: "#3a3758",
-    },
-    subtext: {
+    neutral: {
       main: "#ffffffc7",
     },
     animation: {

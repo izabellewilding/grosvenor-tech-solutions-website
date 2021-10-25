@@ -71,7 +71,7 @@ const SwitchThemeButton = styled.button`
   display: flex;
   border-radius: 50%;
   border: solid 2px;
-  border-color: ${(props) => props.theme.palette.secondary.main};
+  border-color: ${(props) => props.theme.palette.primary.dark};
   padding: 0.75rem;
   background-color: transparent;
   cursor: pointer;
@@ -80,7 +80,7 @@ const SwitchThemeButton = styled.button`
     height: 1.25rem;
     width: 1.25rem;
     transform: rotate(-12deg);
-    fill: ${(props) => props.theme.palette.secondary.main};
+    fill: ${(props) => props.theme.palette.primary.dark};
   }
 `;
 
@@ -124,7 +124,10 @@ export const Navigation = ({ onSelectTheme, isDarkTheme }) => {
       <Logo variant="body2">Grosvenor Technical Solutions.</Logo>
       <>
         {/* <NavList /> */}
-        <SwitchThemeButton onClick={onSelectTheme}>
+        <SwitchThemeButton
+          aria-label="Switch colour mode"
+          onClick={onSelectTheme}
+        >
           {isDarkTheme ? <Sun /> : <Moon />}
         </SwitchThemeButton>
       </>

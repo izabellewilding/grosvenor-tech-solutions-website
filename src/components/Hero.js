@@ -32,12 +32,13 @@ const MainGraphic = styled(Graphic)`
 
   @media ${(props) => props.theme.breakpoints.tabletUp} {
     width: 155%;
+    /* max-width: 650px; */
   }
 `;
 
 const Title = styled(Typography)`
   font-weight: bold;
-  color: ${(props) => props.theme.palette.secondary.main};
+  color: ${(props) => props.theme.palette.primary.dark};
   margin-bottom: 1.25rem;
   @supports not (-webkit-touch-callout: none) {
     mix-blend-mode: ${(props) =>
@@ -50,7 +51,7 @@ const Title = styled(Typography)`
 `;
 
 const Subtitle = styled(Typography)`
-  color: ${(props) => props.theme.palette.subtext.main};
+  color: ${(props) => props.theme.palette.neutral.main};
 `;
 
 const LearnMoreCTAWrapper = styled.div`
@@ -63,7 +64,7 @@ const LearnMoreCTAWrapper = styled.div`
 
 const LearnMore = styled(Typography)`
   margin-left: 1.5rem;
-  color: ${(props) => props.theme.palette.secondary.main};
+  color: ${(props) => props.theme.palette.primary.dark};
 `;
 
 const ButtonsContainer = styled(BaseGrid)`
@@ -83,12 +84,12 @@ const ArrowButton = styled.div`
   width: 2.25rem;
 
   border-radius: 50%;
-  border: solid 3px ${(props) => props.theme.palette.secondary.main};
-  background: ${(props) => props.theme.palette.secondary.main};
+  border: solid 3px ${(props) => props.theme.palette.primary.dark};
+  background: ${(props) => props.theme.palette.primary.dark};
 
   svg {
     height: 2.25;
-    fill: ${(props) => props.theme.palette.light.main};
+    fill: ${(props) => props.theme.palette.primary.light};
   }
 `;
 
@@ -103,10 +104,14 @@ export const Hero = () => {
           </Subtitle>
           <ButtonsContainer container spacing={3}>
             <Grid item>
-              <RoundedButton variant="contained">See our work</RoundedButton>
+              <RoundedButton aria-label="See our work" variant="contained">
+                See our work
+              </RoundedButton>
             </Grid>
             <Grid item>
-              <RoundedButton variant="outlined">Get in touch</RoundedButton>
+              <RoundedButton aria-label="Get in touch" variant="outlined">
+                Get in touch
+              </RoundedButton>
             </Grid>
           </ButtonsContainer>
           <LearnMoreCTAWrapper>
