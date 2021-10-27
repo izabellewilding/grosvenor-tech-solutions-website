@@ -32,7 +32,6 @@ const MainGraphic = styled(Graphic)`
 
   @media ${(props) => props.theme.breakpoints.tabletUp} {
     width: 1000px;
-    /* max-width: 650px; */
   }
 `;
 
@@ -75,6 +74,7 @@ const ButtonsContainer = styled(BaseGrid)`
 const RoundedButton = styled(Button)`
   border-radius: 50px;
   padding: 15px 27px;
+  text-decoration: none;
 `;
 
 const ArrowButton = styled.div`
@@ -105,22 +105,29 @@ export const Hero = () => {
           </Subtitle>
           <ButtonsContainer container spacing={3}>
             <Grid item>
-              <RoundedButton aria-label="See our work" variant="contained">
-                See our work
-              </RoundedButton>
-            </Grid>
-            <Grid item>
-              <RoundedButton aria-label="Get in touch" variant="outlined">
+              <RoundedButton
+                as="a"
+                href="mailto:ziagrosvenor17@gmail.com"
+                aria-label="See our work"
+                variant="contained"
+                mail
+              >
                 Get in touch
               </RoundedButton>
             </Grid>
+            {/* <Grid item>
+              <RoundedButton
+                aria-label="Get in touch"
+                variant="outlined"
+              ></RoundedButton>
+            </Grid> */}
           </ButtonsContainer>
-          <LearnMoreCTAWrapper>
+          {/* <LearnMoreCTAWrapper>
             <ArrowButton>
               <DownArrowGraphic />
             </ArrowButton>
             <LearnMore variant="body1">Learn more about what we do</LearnMore>
-          </LearnMoreCTAWrapper>
+          </LearnMoreCTAWrapper> */}
         </StyledGridItem>
         <MainGraphicWrapper item xs={12} md={6}>
           <MainGraphic />

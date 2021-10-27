@@ -19,7 +19,7 @@ const BannerWave = styled(Wave)`
 `;
 
 const StyledContainer = styled.div`
-  padding-top: 15vh;
+  padding-top: 10vh;
   padding-left: 5vw;
   padding-right: 5vw;
 
