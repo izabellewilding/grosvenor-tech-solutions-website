@@ -40,6 +40,7 @@ function App() {
         <app className="App">
           <Navigation onSelectTheme={toggleTheme} isDarkTheme={isDarkTheme} />
           <BannerWave />
+          {/* Still deciding whether we want to use the animation */}
           {/* <BinaryMatrixAnimation isDarkTheme={isDarkTheme} /> */}
           <StyledContainer maxWidth="xl">
             <Hero isDarkTheme={isDarkTheme} />
